@@ -250,4 +250,140 @@ section.
 
 Next we need to create templates for show, new, and edit
 
+## Show Stache
+
+### views/show.rb
+
+    class App
+      module Views
+        class Show < Layout
+        end
+      end
+    end
+
+### templates/show.mustache
+
+    <header>
+      <h1>{{title}}</h1>
+    </header>
+    {{#post}}
+    <article>
+      <header>
+        <h2>{{title}}</h2>
+        <ul>
+          <li><a href="/">Index</a></li>
+          <li><a href="/{{id}}/edit">Edit</a></li>
+          <li>
+            <form action='/{{id}}' method='post'>
+              <input type='hidden' name='_method' value='delete' />
+              <button>Delete</button>
+            </form>
+          </li>
+        </ul>
+        <p>
+          Posted on: {{created_at}}
+          <br />
+          Updated on: {{updated_at}}
+        </p>
+      </header>
+      {{{body}}}
+    </article>
+    {{/post}}
+
+
+
+## New stache
+
+### views/new.rb
+
+    class App
+      module Views
+        class New < Layout
+        end
+      end
+    end
+
+### templates/new.mustache
+
+    <header>
+      <h1>{{title}}</h1>
+    </header>
+    {{#post}}
+    <article>
+      <form action='/' method='post'>
+        <fieldset>
+          <legend>New Post</legend>
+          <p>
+            <label for='post_title'>Title</label>
+            <br />
+            <input type='text' id='post_title' name='post[title]' value='{{title}}' />
+          </p>
+          <p>
+            <label for='post_body'>Body</label>
+            <br />
+            <textarea id='post_body' name='post[body]'>{{body}}</textarea>
+          </p>
+        <fieldset>
+          <p>
+            <button>Create Post</button>
+            or
+            <a href='/'>Cancel</a>
+          </p>
+        </fieldset>
+      </form>
+    {{/post}}
+
+
+## Edit Stache
+
+### views/edit.rb
+
+    class App
+      module Views
+        class Edit < Layout
+        end
+      end
+    end
+
+
+
+### templates/edit.mustache
+
+    <header>
+      <h1>{{title}}</h1>
+    </header>
+    {{#post}}
+    <article>
+      <form action='/{{id}}' method='post'>
+        <input type='hidden' name='_method' value="PUT" />
+        <fieldset>
+          <legend>Edit Post</legend>
+          <p>
+            <label for='post_title'>Title</label>
+            <br />
+            <input type='text' id='post_title' name='post[title]' value='{{title}}' />
+          </p>
+          <p>
+            <label for='post_body'>Body</label>
+            <br />
+            <textarea id='post_body' name='post[body]'>{{body}}</textarea>
+          </p>
+        <fieldset>
+          <p>
+            <button>Update Post</button>
+            or
+            <a href='/'>Cancel</a>
+          </p>
+        </fieldset>
+      </form>
+    {{/post}}
+
+
+
+
+
+
+
+
+
 
