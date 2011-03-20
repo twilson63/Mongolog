@@ -1,11 +1,13 @@
 require 'bundler/setup'
 require 'sinatra'
+require 'sass'
+require 'compass'
 require 'mongo_mapper'
 require 'mustache/sinatra'
 
 MongoMapper.database = 'mongolog'
 
-class Post 
+class Post
   include MongoMapper::Document
 
   key :title, String
@@ -21,6 +23,17 @@ class App < Sinatra::Base
 
   set :mustache, { :views => 'views/', :templates => 'templates/' }
   set :method_override, true
+
+  configure do
+    config_file = File.join(Sinatra::Application.root, 'config.rb')
+    Compass.add_project_configuration(config_file)
+  end
+
+  get '/stylesheets/:name.css' do
+    content_type 'text/css', :charset => 'utf-8'
+    scss(:"stylesheets/#{params[:name]}", Compass.sass_engine_options )
+  end
+
 
   get '/' do
     @posts = Post.sort(:updated_at.desc).all

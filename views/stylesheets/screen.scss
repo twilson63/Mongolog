@@ -1,0 +1,59 @@
+//** SCREEN STYLES **//
+
+// Imports --------------------------------------------------------------
+
+@import "compass/reset";
+@import "base";
+@import "fancy-buttons";
+
+
+/* Layout -------------------------------------------------------------- */
+
+// establish your vertical baseline grid.
+// see the compass typography module for details on vertical rhythm.
+@include establish-baseline;
+
+// change '.container' to match your HTML container element
+// or @extend it to apply multiple containers on your site.
+.container {
+  @include container;
+  @include show-grid; }
+
+/* Styles -------------------------------------------------------------- */
+header {
+  @include container;
+  margin-top: 20px;
+  h1 {
+    @include prefix(3);
+    @include columns(9);
+    font-size: 3em;
+  }
+  a.button {
+    float:right;
+  }
+}
+
+article {
+  @include container;
+  header {
+    @include prefix(4);
+    a {
+      text-decoration: none;
+      font-size: 2em;
+      color: lighten(black, 30%);
+    }
+    p {
+      font-size: .8em;
+      color: ligthen(black, 50%);
+    }
+
+  }
+  #post_content {
+    @include prefix(3);
+    @include columns(5);
+  }
+}
+
+a.button {
+  @include fancy-button(#00BD01, 26px, 1em, 4px);
+}

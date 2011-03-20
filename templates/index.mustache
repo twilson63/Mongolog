@@ -1,6 +1,6 @@
 <header>
-  <h1>{{title}}</h1>
-  <a href='/new'>New Post</a>
+  <h1>{ { {{title}} } }</h1>
+  <a href='/new' class='button'>New Post</a>
 </header>
 {{#posts}}
 <article>
@@ -8,7 +8,9 @@
   <h2><a href='/{{id}}'>{{title}}</a></h2>
   <p>Posted on: {{created_at}}</p>
   </header>
-  {{{body}}}
+  <div id='post_content'>
+    {{{body}}}
+  </div>
 </article>
 {{/posts}}
 
