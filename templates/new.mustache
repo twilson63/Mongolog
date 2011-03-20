@@ -1,0 +1,29 @@
+<header>
+  <h1>{{title}}</h1>
+</header>
+{{#post}}
+<article>
+  <form action='/' method='post'>
+    <fieldset>
+      <legend>New Post</legend>
+      <p>
+        <label for='post_title'>Title</label>
+        <br />
+        <input type='text' id='post_title' name='post[title]' value='{{title}}' />
+      </p>
+      <p>
+        <label for='post_body'>Body</label>
+        <br />
+        <textarea id='post_body' name='post[body]'>{{body}}</textarea>
+      </p>
+    <fieldset>
+      <p>
+        <button>Create Post</button>
+        or
+        <a href='/'>Cancel</a>
+      </p>
+    </fieldset>
+  </form>
+{{/post}}
+
+

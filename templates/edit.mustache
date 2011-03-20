@@ -1,0 +1,30 @@
+<header>
+  <h1>{{title}}</h1>
+</header>
+{{#post}}
+<article>
+  <form action='/{{id}}' method='post'>
+    <input type='hidden' name='_method' value="PUT" />
+    <fieldset>
+      <legend>Edit Post</legend>
+      <p>
+        <label for='post_title'>Title</label>
+        <br />
+        <input type='text' id='post_title' name='post[title]' value='{{title}}' />
+      </p>
+      <p>
+        <label for='post_body'>Body</label>
+        <br />
+        <textarea id='post_body' name='post[body]'>{{body}}</textarea>
+      </p>
+    <fieldset>
+      <p>
+        <button>Update Post</button>
+        or
+        <a href='/'>Cancel</a>
+      </p>
+    </fieldset>
+  </form>
+{{/post}}
+
+

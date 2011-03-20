@@ -1,0 +1,28 @@
+<header>
+  <h1>{{title}}</h1>
+</header>
+{{#post}}
+<article>
+  <header>
+    <h2>{{title}}</h2>
+    <ul>
+      <li><a href="/">Index</a></li>
+      <li><a href="/{{id}}/edit">Edit</a></li>
+      <li>
+        <form action='/{{id}}' method='post'>
+          <input type='hidden' name='_method' value='delete' />
+          <button>Delete</button>
+        </form>
+      </li>
+    </ul>
+    <p>
+      Posted on: {{created_at}}
+      <br />
+      Updated on: {{updated_at}}
+    </p>
+  </header>
+  {{{body}}}
+</article>
+{{/post}}
+
+
