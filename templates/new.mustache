@@ -1,20 +1,20 @@
 <header>
-  <h1>{{title}}</h1>
+  <h1>{ { {{title}} } }</h1>
 </header>
 {{#post}}
 <article>
-  <form action='/' method='post'>
+  <form action='/' method='post' id='manage'>
     <fieldset>
       <legend>New Post</legend>
       <p>
         <label for='post_title'>Title</label>
         <br />
-        <input type='text' id='post_title' name='post[title]' value='{{title}}' />
+        <input type='text' id='post_title' name='post[title]' value='{{title}}' autofocus placeholder='Awesome Title!' />
       </p>
       <p>
         <label for='post_body'>Body</label>
         <br />
-        <textarea id='post_body' name='post[body]'>{{body}}</textarea>
+        <textarea id='post_body' name='post[body]' placeholder='Awesome Article'>{{body}}</textarea>
       </p>
     <fieldset>
       <p>

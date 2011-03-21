@@ -15,6 +15,11 @@ a img { border: none; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
+/* incase an inverted custom gradient isn't specified */
+.fancy-button-reset-base-class, a.button, button { font-family: "Lucida Grande", Lucida, Arial, sans-serif; background: url('../images/button_bg.png?1300646468') repeat-x bottom left; margin: 0; width: auto; overflow: visible; display: inline-block; cursor: pointer; text-decoration: none; border-style: solid; font-weight: bold; }
+.fancy-button-reset-base-class::-moz-focus-inner, a.button::-moz-focus-inner, button::-moz-focus-inner { border: none; padding: 0; }
+.fancy-button-reset-base-class:focus, a.button:focus, button:focus { outline: none; }
+
 /* Layout -------------------------------------------------------------- */
 body { font-size: 100%; line-height: 1.5em; }
 
@@ -24,6 +29,39 @@ html > body { font-size: 16px; }
 .container:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
 
 /* Styles -------------------------------------------------------------- */
-header { *zoom: 1; margin: auto; width: 61em; max-width: 100%; background-image: url('../images/grid.png?1300646359'); background-repeat: repeat; background-position: 1em 0; }
+header { *zoom: 1; margin: auto; width: 61em; max-width: 100%; margin-top: 20px; }
 header:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
-header h1 { font-size: 3em; }
+header h1 { padding-left: 24.59%; display: inline; float: left; width: 72.131%; margin-right: 1.639%; font-size: 3em; }
+header a.button { float: right; }
+
+article { *zoom: 1; margin: auto; width: 61em; max-width: 100%; }
+article:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+article header { padding-left: 32.787%; }
+article header a { text-decoration: none; font-size: 2em; color: #4d4d4d; }
+article header p { font-size: .8em; color: ligthen(black, 50%); }
+article footer { padding-left: 16.393%; display: inline; float: left; width: 80.328%; margin-right: 1.639%; margin-top: 20px; }
+article #post_content { padding-left: 24.59%; display: inline; float: left; width: 39.344%; margin-right: 1.639%; font-family: arial; letter-spacing: 1px; }
+article form { padding-left: 8.197%; display: inline; float: left; width: 72.131%; margin-right: 1.639%; display: inline; float: right; margin-right: 1.639%; #margin-left: -1em; margin-top: 50px; }
+article form fieldset legend { -webkit-border-radius: 4px 4px; -moz-border-radius: 4px / 4px; -o-border-radius: 4px / 4px; -ms-border-radius: 4px / 4px; -khtml-border-radius: 4px / 4px; border-radius: 4px / 4px; background-color: #4d4d4d; color: #cccccc; padding: 5px; width: 300px; }
+article form fieldset p { margin-top: 20px; padding-top: 20px; }
+article form fieldset p label { color: #8080ff; font-style: bold; }
+article form fieldset p input[type='text'] { padding: 3px; width: 300px; font-size: 1em; font-family: arial; }
+article form fieldset p textarea { padding: 5px; width: 300px; height: 250px; font-size: 1em; font-family: arial; }
+
+a { color: #00BD01; }
+
+a:visited { color: #00BD01; }
+
+a.button { -moz-border-radius: 1em; -webkit-border-radius: 1em; -o-border-radius: 1em; -ms-border-radius: 1em; -khtml-border-radius: 1em; border-radius: 1em; font-size: 26px; line-height: 1.2em; padding: 0.3em 1em; border-width: 4px; background-color: #00bd01; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66ff67), color-stop(10%, #0bff0c), color-stop(50%, #00ae01), color-stop(50%, #009e01), color-stop(100%, #00d101)); background-image: -moz-linear-gradient(#66ff67, #0bff0c 10%, #00ae01 50%, #009e01 50%, #00d101); background-image: linear-gradient(#66ff67, #0bff0c 10%, #00ae01 50%, #009e01 50%, #00d101); border-color: #007101; text-shadow: #003e00 0px 1px 1px; -moz-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -webkit-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -o-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -moz-background-clip: padding; -webkit-background-clip: padding; -o-background-clip: padding-box; -ms-background-clip: padding-box; -khtml-background-clip: padding-box; background-clip: padding-box; }
+a.button, a.button:visited { color: white; }
+a.button:hover, a.button:focus { background-color: #00ae01; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #57ff58), color-stop(10%, #00fa01), color-stop(50%, #009e01), color-stop(50%, #008f01), color-stop(100%, #00c201)); background-image: -moz-linear-gradient(#57ff58, #00fa01 10%, #009e01 50%, #008f01 50%, #00c201); background-image: linear-gradient(#57ff58, #00fa01 10%, #009e01 50%, #008f01 50%, #00c201); border-color: #006101; text-shadow: #002e00 0px 1px 1px; }
+a.button:hover, a.button:hover:visited, a.button:focus, a.button:focus:visited { color: white; }
+a.button:active { background-color: #009e01; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #009e01), color-stop(30%, #00a901), color-stop(50%, #009401), color-stop(50%, #008501), color-stop(100%, #00c701)); background-image: -moz-linear-gradient(#009e01, #00a901 30%, #009401 50%, #008501 50%, #00c701); background-image: linear-gradient(#009e01, #00a901 30%, #009401 50%, #008501 50%, #00c701); border-color: #005200; text-shadow: #001f00 0px -1px -1px; -moz-box-shadow: #007101 0 0.08em 0.2em 1px inset; -webkit-box-shadow: #007101 0 0.08em 0.2em 1px inset; -o-box-shadow: #007101 0 0.08em 0.2em 1px inset; box-shadow: #007101 0 0.08em 0.2em 1px inset; }
+a.button:active, a.button:active:visited { color: white; }
+
+button { -moz-border-radius: 1em; -webkit-border-radius: 1em; -o-border-radius: 1em; -ms-border-radius: 1em; -khtml-border-radius: 1em; border-radius: 1em; font-size: 26px; line-height: 1.2em; padding: 0.3em 1em; border-width: 4px; background-color: #00bd01; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66ff67), color-stop(10%, #0bff0c), color-stop(50%, #00ae01), color-stop(50%, #009e01), color-stop(100%, #00d101)); background-image: -moz-linear-gradient(#66ff67, #0bff0c 10%, #00ae01 50%, #009e01 50%, #00d101); background-image: linear-gradient(#66ff67, #0bff0c 10%, #00ae01 50%, #009e01 50%, #00d101); border-color: #007101; text-shadow: #003e00 0px 1px 1px; -moz-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -webkit-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -o-box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; box-shadow: rgba(255, 255, 255, 0.371) 0 0 0.1em 1px inset; -moz-background-clip: padding; -webkit-background-clip: padding; -o-background-clip: padding-box; -ms-background-clip: padding-box; -khtml-background-clip: padding-box; background-clip: padding-box; }
+button, button:visited { color: white; }
+button:hover, button:focus { background-color: #00ae01; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #57ff58), color-stop(10%, #00fa01), color-stop(50%, #009e01), color-stop(50%, #008f01), color-stop(100%, #00c201)); background-image: -moz-linear-gradient(#57ff58, #00fa01 10%, #009e01 50%, #008f01 50%, #00c201); background-image: linear-gradient(#57ff58, #00fa01 10%, #009e01 50%, #008f01 50%, #00c201); border-color: #006101; text-shadow: #002e00 0px 1px 1px; }
+button:hover, button:hover:visited, button:focus, button:focus:visited { color: white; }
+button:active { background-color: #009e01; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #009e01), color-stop(30%, #00a901), color-stop(50%, #009401), color-stop(50%, #008501), color-stop(100%, #00c701)); background-image: -moz-linear-gradient(#009e01, #00a901 30%, #009401 50%, #008501 50%, #00c701); background-image: linear-gradient(#009e01, #00a901 30%, #009401 50%, #008501 50%, #00c701); border-color: #005200; text-shadow: #001f00 0px -1px -1px; -moz-box-shadow: #007101 0 0.08em 0.2em 1px inset; -webkit-box-shadow: #007101 0 0.08em 0.2em 1px inset; -o-box-shadow: #007101 0 0.08em 0.2em 1px inset; box-shadow: #007101 0 0.08em 0.2em 1px inset; }
+button:active, button:active:visited { color: white; }

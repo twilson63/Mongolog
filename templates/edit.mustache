@@ -1,9 +1,9 @@
 <header>
-  <h1>{{title}}</h1>
+<h1>{ { {{title}} } }</h1>
 </header>
 {{#post}}
 <article>
-  <form action='/{{id}}' method='post'>
+  <form action='/{{id}}' method='post' id='manage'>
     <input type='hidden' name='_method' value="PUT" />
     <fieldset>
       <legend>Edit Post</legend>

@@ -1,13 +1,12 @@
 <header>
-  <h1>{{title}}</h1>
+   <h1>{ { {{title}} } }</h1>
 </header>
 {{#post}}
 <article>
-  <header>
-    <h2>{{title}}</h2>
+  <nav>
     <ul>
-      <li><a href="/">Index</a></li>
-      <li><a href="/{{id}}/edit">Edit</a></li>
+      <li><a href="/" class='button'>Index</a></li>
+      <li><a href="/{{id}}/edit" class='button'>Edit</a></li>
       <li>
         <form action='/{{id}}' method='post'>
           <input type='hidden' name='_method' value='delete' />
@@ -15,13 +14,20 @@
         </form>
       </li>
     </ul>
+  </nav>
+  <header>
+    <h2>{{title}}</h2>
+  </header>
+  <div id='post_content'>
+    {{{body}}}
+  </div>
+  <footer>
     <p>
       Posted on: {{created_at}}
-      <br />
+      &nbsp;&nbsp;|&nbsp;&nbsp;
       Updated on: {{updated_at}}
     </p>
-  </header>
-  {{{body}}}
+  </footer>
 </article>
 {{/post}}
 

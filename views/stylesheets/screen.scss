@@ -5,6 +5,7 @@
 @import "compass/reset";
 @import "base";
 @import "fancy-buttons";
+@import "compass/css3/border-radius";
 
 
 /* Layout -------------------------------------------------------------- */
@@ -24,23 +25,26 @@ header {
   @include container;
   margin-top: 20px;
   h1 {
-    @include prefix(3);
+    @include prefix(4);
     @include columns(9);
     font-size: 3em;
   }
   a.button {
-    float:right;
+
+     
   }
 }
 
 article {
   @include container;
+  margin-top: 30px;
   header {
     @include prefix(4);
+    h2{
+      font-size: 2em;
+    }
     a {
       text-decoration: none;
-      font-size: 2em;
-      color: lighten(black, 30%);
     }
     p {
       font-size: .8em;
@@ -48,12 +52,75 @@ article {
     }
 
   }
+  nav {
+    @include prefix(3); 
+    ul { 
+      li {
+        display: inline; 
+        form {
+          display: inline;
+          button { display: inline; }
+        }
+      }
+    }
+  }
+  footer {
+    @include prefix(2);
+    @include columns(10);
+    margin-top: 20px;
+  }
   #post_content {
     @include prefix(3);
     @include columns(5);
+    font-family: arial;
+    letter-spacing: 1px;
+    
+
+  }
+  form#manage {
+    @include prefix(1);
+    @include columns(9);
+    @include omega;
+    margin-top: 50px;
+    fieldset {
+      legend {
+        @include border-radius(4px, 4px);
+        background-color: lighten(black, 30%);
+        color: darken(white, 20%);
+        padding: 5px;
+        width: 300px;
+        
+      }
+      p {
+        margin-top: 20px;
+        padding-top: 20px;
+        label {
+          color: lighten(blue, 25%);
+          font-style: bold;
+
+        }
+        input[type='text'] {
+          padding: 3px;
+          width: 300px;
+          font-size: 1em;
+          font-family: arial;
+        }
+        textarea { 
+          padding: 5px;
+          width: 300px;
+          height: 250px;
+          font-size: 1em;
+          font-family: arial;
+        }
+      }
+    }
   }
 }
 
+
+a { color: #00BD01 } 
+a:visited { color: #00BD01 }
 a.button {
   @include fancy-button(#00BD01, 26px, 1em, 4px);
 }
+button { @include fancy-button(#00BD01, 26px, 1em, 4px); }
