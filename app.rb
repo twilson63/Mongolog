@@ -19,9 +19,9 @@ end
 
 class App < Sinatra::Base
   register Mustache::Sinatra
-  require './views/layout'
+  require 'views/layout'
 
-  set :mustache, { :views => './views/', :templates => './templates/' }
+  set :mustache, { :views => 'views/', :templates => 'templates/' }
   set :method_override, true
 
   configure do
