@@ -2,7 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     activesupport (3.0.5)
-    bson (1.2.4)
+    bson (1.12.5)
     bson_ext (1.2.4)
     chunky_png (0.12.0)
     compass (0.11.beta.3)
