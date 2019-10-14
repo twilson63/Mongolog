@@ -1,7 +1,8 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (3.0.5)
+    activesupport (3.1.12)
+      multi_json (~> 1.0)
     bson (1.2.4)
     bson_ext (1.2.4)
     chunky_png (0.12.0)
@@ -21,6 +22,7 @@ GEM
       activesupport (>= 2.3.4)
       jnunemaker-validatable (~> 1.8.4)
       plucky (~> 0.3.6)
+    multi_json (1.14.0)
     mustache (0.99.3)
     plucky (0.3.7)
       mongo (~> 1.1)
