@@ -24,7 +24,7 @@ GEM
     mustache (0.99.3)
     plucky (0.3.7)
       mongo (~> 1.1)
-    rack (1.2.2)
+    rack (1.6.13)
     sass (3.1.0.alpha.249)
     sinatra (1.2.1)
       rack (~> 1.1)
